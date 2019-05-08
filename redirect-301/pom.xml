@@ -87,4 +87,5 @@ Obs: 1. Multilples URLs are allowed separated by comma.
 2. The given friendlyURLs correspond to the URL of destination, not to origin URLs
 
 Nice to meet you! ;)</description>
+	<url>https://github.com/marceltanuri/redirect-301-hook</url>
 </project>
