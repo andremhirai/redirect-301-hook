@@ -13,7 +13,7 @@ How to use me:
 6) Enter the friendlyURLs of destination you want to redirect with HTTP STATUS 301.
 
 Obs: 
-1. Multilples URLs are allowed separated by comma.
+1. Multilple URLs are allowed separated by comma.
 2. The given friendlyURLs correspond to the URL of destination, not to origin URLs
 
 Nice to meet you! ;)
