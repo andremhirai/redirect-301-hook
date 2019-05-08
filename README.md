@@ -9,9 +9,11 @@ How to use-me:
 2)  Set its name (Key) as 'pages-with-redirect-301'
 3) Set its type as 'indexed text field'
 4) Very important! -> Give permission of View for Guest role
-5) Go to the Site you want to > Site Administration > Configuration > Site Settings > Custom Fields
+5) Go to the Site you want > Site Administration > Configuration > Site Settings > Custom Fields
 6) Enter the friendlyURLs of destination you want to redirect with HTTP STATUS 301.
-Obs: 1. Multilples URLs are allowed separated by comma.
+
+Obs: 
+1. Multilples URLs are allowed separated by comma.
 2. The given friendlyURLs correspond to the URL of destination, not to origin URLs
 
 Nice to meet you! ;)
