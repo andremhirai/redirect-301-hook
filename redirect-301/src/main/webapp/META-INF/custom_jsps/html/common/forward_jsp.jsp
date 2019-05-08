@@ -16,8 +16,8 @@
 <%@ include file="/html/common/forward_common.jsp" %>
 
  <% 
- 	if(GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge()!=null && GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttributes().containsKey("pages-with-redirect-301")){
-	 	Serializable pagesWith301Redirect = GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttribute("pages-with-redirect-301");
+	if(GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge()!=null && GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttributes().containsKey("pages-with-redirect-301")){
+		Serializable pagesWith301Redirect = GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttribute("pages-with-redirect-301");
 		List<String> list = Arrays.asList(pagesWith301Redirect.toString().replace(" ","").split(","));
 		if(list.contains(themeDisplay.getLayout().getFriendlyURL(themeDisplay.getLocale()))){
 			response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
@@ -26,8 +26,8 @@
 		else{
 			response.sendRedirect(forwardURL);
 		}		
- 	}		 
-    else {
-        response.sendRedirect(forwardURL);
-    } 
+	}		 
+	else {
+		response.sendRedirect(forwardURL);
+	} 
 %> 
