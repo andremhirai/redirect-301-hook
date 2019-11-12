@@ -14,6 +14,6 @@ How to use me:
 
 Obs: 
 1. Multilple URLs are allowed separated by comma.
-2. The given friendlyURLs correspond to the URL of destination, not to origin URLs
+2. The given friendlyURLs correspond to the URL of origin, not to destination URLs
 
 Nice to meet you! ;)
