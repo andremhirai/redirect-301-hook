@@ -25,7 +25,7 @@
 			if(!pageWith301Redirect.isEmpty() && originURL.endsWith(pageWith301Redirect)){
 				response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 				response.setHeader("Location", forwardURL);			 
-
+				break;
 			 } 
 			else{
 				response.sendRedirect(forwardURL);
