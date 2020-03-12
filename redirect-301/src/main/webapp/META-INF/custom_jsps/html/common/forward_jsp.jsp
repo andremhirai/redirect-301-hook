@@ -19,16 +19,13 @@
 		Serializable pagesWith301Redirect = GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttribute("pages-with-redirect-301");
 		List<String> pagesWith301RedirectList = Arrays.asList(pagesWith301Redirect.toString().replace(" ","").split(","));
 			
-		if(!pageWith301Redirect.isEmpty() && pageWith301Redirect.contains(originURL)){
+		if(!pagesWith301RedirectList.isEmpty() && pagesWith301RedirectList.contains(originURL)){
 			response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 			response.setHeader("Location", forwardURL);		
-		}else {
-			response.sendRedirect(forwardURL);
 		}
-	}		 
-	else {
+	}	
+		 
 		response.sendRedirect(forwardURL);
-	}
 
 
 %>
