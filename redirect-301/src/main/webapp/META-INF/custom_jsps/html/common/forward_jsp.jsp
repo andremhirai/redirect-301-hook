@@ -20,10 +20,10 @@
 		List<String> pagesWith301RedirectList = Arrays.asList(pagesWith301Redirect.toString().replace(" ","").split(","));
 
 		boolean foundUrl301 = false;
+		
 		for (String url : pagesWith301RedirectList){
-			System.out.println(url);
+
 			if(!url.isEmpty() && url.equals(originURL)){
-				System.out.println("entrou");
 				response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 	 			response.setHeader("Location", forwardURL);
 	 			foundUrl301 = true;
@@ -36,8 +36,6 @@
 		}
 
 	}else{	
-		System.out.println("Execute sendRedirect");
-		 
 		response.sendRedirect(forwardURL);
 	}
 
