@@ -18,15 +18,12 @@
 	if(GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge()!=null && GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttributes().containsKey("pages-with-redirect-301")){
 		Serializable pagesWith301Redirect = GroupLocalServiceUtil.getGroup(themeDisplay.getSiteGroup().getGroupId()).getExpandoBridge().getAttribute("pages-with-redirect-301");
 		List<String> pagesWith301RedirectList = Arrays.asList(pagesWith301Redirect.toString().replace(" ","").split(","));
-		
-		Iterator<String> pagesWith301RedirectIterator = pagesWith301RedirectList.iterator();
-		while (pagesWith301RedirectIterator.hasNext()) {
-			String pageWith301Redirect = pagesWith301RedirectIterator.next();
-			if(!pageWith301Redirect.isEmpty() && originURL.endsWith(pageWith301Redirect)){
-				response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
-				response.setHeader("Location", forwardURL);			 
-				break;
-			 }
+			
+		if(!pageWith301Redirect.isEmpty() && pageWith301Redirect.contains(originURL)){
+			response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+			response.setHeader("Location", forwardURL);		
+		}else {
+			response.sendRedirect(forwardURL);
 		}
 	}		 
 	else {
